@@ -1,6 +1,8 @@
 - BC3- COLECCIONES, FICHEROS Y ENTRADA/SALIDA
 - ITERADORES
+  
 Filtrado de Palabras por Inicial
+
 Programa en Java diseñado para gestionar colecciones de texto y eliminar elementos basados en un criterio alfabético específico.
 
 🚀 Funcionalidades
