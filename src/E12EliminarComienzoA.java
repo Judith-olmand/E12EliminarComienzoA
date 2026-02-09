@@ -1,13 +1,48 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+public class E12EliminarComienzoA {
+    public static void main(String[] args) {
+        Set<String> palabras = new HashSet<>();
+
+        palabras.add("Abrigo");
+        // USO DE GEMINI
+        //crea 10 líneas como esta, con diferentes palabras. Que haya 5 que empiecen por A
+        //palabras.add("Abrigo");
+        palabras.add("Acuarela");
+        palabras.add("Espejismo");
+        palabras.add("Brújula");
+        palabras.add("Almendra");
+        palabras.add("Asteroide");
+        palabras.add("Destello");
+        palabras.add("Horizonte");
+        palabras.add("Antorcha");
+        palabras.add("Cúmulo");
+        palabras.add("Abanico");
+
+        System.out.println("LISTA DE PALABRAS COMPLETA");
+        for(String palabra : palabras){
+            System.out.print(palabra + "; ");
+        }
+
+        Iterator<String> iterador = palabras.iterator();
+        while(iterador.hasNext()){
+            String palabra = iterador.next();
+            /**
+             * startsWith --> que comience con X
+             * también se puede usar:
+             * palabra.matches("(?i)A.*") --> (?i) --> ignora mayus o minus.
+             */
+            if(palabra.toUpperCase().startsWith("A")){
+                iterador.remove();
+            }
+        }
+
+        System.out.println();
+        System.out.println("LISTA DE PALABRAS SIN LAS QUE COMIENZAN CON A");
+        for(String palabra : palabras){
+            System.out.print(palabra + "; ");
+        }
+    }
 }
